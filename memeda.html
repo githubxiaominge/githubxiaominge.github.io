@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      .content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title {
+        font-size: 36px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .btns {
+        text-align: center;
+      }
+
+      .btns button {
+        position: relative;
+        font-size: 20px;
+        margin: 0 30px;
+        user-select: none;
+        padding: 0 16px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div>
+        <div class="title">宝宝别生气啦～</div>
+        <div class="btns">
+          <button id="ok">好的</button>
+          <button id="refuse">不好</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        var okbtn = document.getElementById("ok");
+        var refuseBtn = document.getElementById("refuse");
+        okbtn.addEventListener(
+          "click",
+          function () {
+            alert("宝宝真乖");
+          },
+          false
+        );
+        refuseBtn.addEventListener(
+          "touchstart",
+          function () {
+            if (refuseBtn.style.left || refuseBtn.style.right) {
+              refuseBtn.style = "";
+            } else {
+              refuseBtn.style = "left:90px";
+            }
+          },
+          false
+        );
+      };
+    </script>
+  </body>
+</html>
